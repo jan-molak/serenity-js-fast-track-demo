@@ -1,0 +1,21 @@
+<div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" name="name" ng-model="formData.name">
+</div>
+
+<div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" name="email" ng-model="formData.email" required>
+    <div ng-messages="wizard.email.$error" ng-if="formStepSubmitted || wizard.email.$touched">
+      <div ng-message="required">The email is required</div>
+      <div ng-message="email">Not a valid email</div>
+    </div>
+</div>
+
+<div class="form-group row">
+<div class="col-xs-6 col-xs-offset-3">
+    <a id="next-step" ng-click="goToNextSection(wizard.$valid)" class="btn btn-block btn-info">
+    Next Step <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+</div>
+</div>

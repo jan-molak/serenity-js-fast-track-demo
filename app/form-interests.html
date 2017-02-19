@@ -1,0 +1,32 @@
+<label>What are you interested in?</label>
+<div class="form-group">
+    <div class="radio">
+        <label>
+            <input type="radio" name="interests" ng-model="formData.interests" value="later" required />
+            I'll tell you later
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+           <input type="radio" name="interests" ng-model="formData.interests" value="rock" required />
+           I like rock music
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="interests" ng-model="formData.interests" value="games" required />
+            I like video games
+        </label>
+    </div>
+    <div ng-messages="wizard.interests.$error" ng-if="formStepSubmitted || wizard.interests.$touched">
+        <div ng-message="required">We'd like to know what you're interested in to give you a nice discount :-)</div>
+    </div>
+</div>
+
+<div class="form-group row">
+<div class="col-xs-6 col-xs-offset-3">
+    <a id="next-step" ng-click="goToNextSection(wizard.$valid)" ui-sref="form.summary" class="btn btn-block btn-info">
+    Next Step <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+</div>
+</div>
