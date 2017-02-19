@@ -2,8 +2,9 @@ import { PerformsTasks, See, step, Task, Text } from 'serenity-js/lib/screenplay
 import { SummaryStep } from './components/summary/summary_step';
 
 import chai = require('chai');
+import chaiAsPromised = require('chai-as-promised');
 
-chai.use(require('chai-as-promised'));  // tslint:disable-line:no-var-requires
+chai.use(chaiAsPromised);
 
 export class Ensure {
     static thatAppliedDiscountEquals = (expectedDiscount: number): Task => new DiscountIsApplied(expectedDiscount);
